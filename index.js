@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors'); // middleware to enable CORS (Cross-Origin Resource Sharing)
 
 const app = express();
-const port = process.env.PORT || 8080; // if not defined, use port 8080 
+const port = process.env.PORT; // if not defined, use port 8080 
 app.use(cors());
 app.use(express.json()); 
 // root route -- /api/
