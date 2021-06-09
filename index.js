@@ -4,7 +4,6 @@ const cors = require('cors'); // middleware to enable CORS (Cross-Origin Resourc
 
 const app = express();
 const port = process.env.PORT || 8080; // if not defined, use port 8080 
-const host = process.env.HOST || '127.0.0.1'; // if not defined, localhost
 app.use(cors());
 app.use(express.json()); 
 // root route -- /api/
@@ -29,4 +28,4 @@ app.use('/submissions', require('./routes/submissions.routes.js'))
 app.get('*', function (req, res) {
     res.status(404).json({ message: 'WHAT???' });
 })
-app.listen(port, host, () => console.log(`App listening at http://${host}:${port}/`));
+app.listen(port, () => console.log(`App listening at ${port}`));
